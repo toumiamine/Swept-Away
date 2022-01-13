@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "270547681131",
+    "project_id": "cleaningapp-76b8e",
+    "storage_bucket": "cleaningapp-76b8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:270547681131:android:16f7a3782534168478162e",
+        "android_client_info": {
+          "package_name": "com.punith.flutter_auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "270547681131-atfvioudtkpaauls549j684u60lj2qfo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.punith.flutter_auth",
+            "certificate_hash": "cc1ddbfb186ce5370b59359e0214dae3ba001349"
+          }
+        },
+        {
+          "client_id": "270547681131-dadh24tt3ro89plpm73k9lmpd7cfc2qe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClx9H1o5eNryIegQ_WGzRuGTUgsSTXZDQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "270547681131-dadh24tt3ro89plpm73k9lmpd7cfc2qe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

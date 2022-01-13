@@ -1,0 +1,89 @@
+0
+1
+00:00:00,390 --> 00:00:04,140
+Welcome to a really exciting module. In this module
+1
+
+2
+00:00:04,140 --> 00:00:10,500
+we're going to be building a chat app. And not only is it going to look beautiful, but it's also going
+2
+
+3
+00:00:10,500 --> 00:00:17,970
+to be super powerful because we're going to power our messenger using Firebase Firestore. And this is
+3
+
+4
+00:00:17,970 --> 00:00:19,730
+what I'll look like by the time we're done.
+4
+
+5
+00:00:20,220 --> 00:00:25,140
+So it's got some beautiful animations and we're gonna be looking at how to implement animations in
+5
+
+6
+00:00:25,140 --> 00:00:30,210
+Flutter but also we're going to be creating this beautiful messenger user interface and we're going
+6
+
+7
+00:00:30,210 --> 00:00:36,180
+to be able to set up a group chat and we're also going to implement authentication and registration
+7
+
+8
+00:00:36,450 --> 00:00:42,890
+so the users will be able to register and log in so that they can chat with other users. First things
+8
+
+9
+00:00:42,890 --> 00:00:43,280
+first.
+9
+
+10
+00:00:43,280 --> 00:00:50,600
+As always we're going to head over to the GitHub Repository for flash chats and we're going to clone
+10
+
+11
+00:00:50,960 --> 00:00:53,980
+that repository into our local system.
+11
+
+12
+00:00:53,990 --> 00:00:59,540
+So we're going to check out project from version control and we're gonna go ahead and clone this project.
+12
+
+13
+00:01:00,860 --> 00:01:06,080
+And once it's done, it will open it up and get our dependencies.
+13
+
+14
+00:01:06,080 --> 00:01:12,230
+So if you take a look inside our lib folder, you'll see that we have a whole bunch of screens so let's
+14
+
+15
+00:01:12,230 --> 00:01:13,270
+open all of them up.
+15
+
+16
+00:01:13,280 --> 00:01:19,670
+We've got our welcome screen, our log in and registration screens and finally we've got our chat screen where
+16
+
+17
+00:01:19,670 --> 00:01:25,940
+the chats are going to actually happen. Once you already and setup, head over to the next lesson where
+17
+
+18
+00:01:25,970 --> 00:01:29,120
+we're going to get started building out our Flash Chat app.

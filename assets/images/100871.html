@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<!--[if IE 6]>
+<html id="ie6" lang="en-US"
+	prefix="og: https://ogp.me/ns#" >
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="en-US"
+	prefix="og: https://ogp.me/ns#" >
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en-US"
+	prefix="og: https://ogp.me/ns#" >
+<![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!-->
+<html lang="en-US"
+	prefix="og: https://ogp.me/ns#" >
+<!--<![endif]-->
+<head><script>if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\/7\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf("?")==-1){if(href.indexOf("#")==-1){document.location.href=href+"?nowprocket=1"}else{document.location.href=href.replace("#","?nowprocket=1#")}}else{if(href.indexOf("#")==-1){document.location.href=href+"&nowprocket=1"}else{document.location.href=href.replace("#","&nowprocket=1#")}}}}</script><script>class RocketLazyLoadScripts{constructor(e){this.triggerEvents=e,this.eventOptions={passive:!0},this.userEventListener=this.triggerListener.bind(this),this.delayedScripts={normal:[],async:[],defer:[]},this.allJQueries=[]}_addUserInteractionListener(e){this.triggerEvents.forEach((t=>window.addEventListener(t,e.userEventListener,e.eventOptions)))}_removeUserInteractionListener(e){this.triggerEvents.forEach((t=>window.removeEventListener(t,e.userEventListener,e.eventOptions)))}triggerListener(){this._removeUserInteractionListener(this),"loading"===document.readyState?document.addEventListener("DOMContentLoaded",this._loadEverythingNow.bind(this)):this._loadEverythingNow()}async _loadEverythingNow(){this._delayEventListeners(),this._delayJQueryReady(this),this._handleDocumentWrite(),this._registerAllDelayedScripts(),this._preloadAllScripts(),await this._loadScriptsFromList(this.delayedScripts.normal),await this._loadScriptsFromList(this.delayedScripts.defer),await this._loadScriptsFromList(this.delayedScripts.async),await this._triggerDOMContentLoaded(),await this._triggerWindowLoad(),window.dispatchEvent(new Event("rocket-allScriptsLoaded"))}_registerAllDelayedScripts(){document.querySelectorAll("script[type=rocketlazyloadscript]").forEach((e=>{e.hasAttribute("src")?e.hasAttribute("async")&&!1!==e.async?this.delayedScripts.async.push(e):e.hasAttribute("defer")&&!1!==e.defer||"module"===e.getAttribute("data-rocket-type")?this.delayedScripts.defer.push(e):this.delayedScripts.normal.push(e):this.delayedScripts.normal.push(e)}))}async _transformScript(e){return await this._requestAnimFrame(),new Promise((t=>{const n=document.createElement("script");let i;[...e.attributes].forEach((e=>{let t=e.nodeName;"type"!==t&&("data-rocket-type"===t&&(t="type",i=e.nodeValue),n.setAttribute(t,e.nodeValue))})),e.hasAttribute("src")&&this._isValidScriptType(i)?(n.addEventListener("load",t),n.addEventListener("error",t)):(n.text=e.text,t()),e.parentNode.replaceChild(n,e)}))}_isValidScriptType(e){return!e||""===e||"string"==typeof e&&["text/javascript","text/x-javascript","text/ecmascript","text/jscript","application/javascript","application/x-javascript","application/ecmascript","application/jscript","module"].includes(e.toLowerCase())}async _loadScriptsFromList(e){const t=e.shift();return t?(await this._transformScript(t),this._loadScriptsFromList(e)):Promise.resolve()}_preloadAllScripts(){var e=document.createDocumentFragment();[...this.delayedScripts.normal,...this.delayedScripts.defer,...this.delayedScripts.async].forEach((t=>{const n=t.getAttribute("src");if(n){const t=document.createElement("link");t.href=n,t.rel="preload",t.as="script",e.appendChild(t)}})),document.head.appendChild(e)}_delayEventListeners(){let e={};function t(t,n){!function(t){function n(n){return e[t].eventsToRewrite.indexOf(n)>=0?"rocket-"+n:n}e[t]||(e[t]={originalFunctions:{add:t.addEventListener,remove:t.removeEventListener},eventsToRewrite:[]},t.addEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.add.apply(t,arguments)},t.removeEventListener=function(){arguments[0]=n(arguments[0]),e[t].originalFunctions.remove.apply(t,arguments)})}(t),e[t].eventsToRewrite.push(n)}function n(e,t){let n=e[t];Object.defineProperty(e,t,{get:()=>n||function(){},set(i){e["rocket"+t]=n=i}})}t(document,"DOMContentLoaded"),t(window,"DOMContentLoaded"),t(window,"load"),t(window,"pageshow"),t(document,"readystatechange"),n(document,"onreadystatechange"),n(window,"onload"),n(window,"onpageshow")}_delayJQueryReady(e){let t=window.jQuery;Object.defineProperty(window,"jQuery",{get:()=>t,set(n){if(n&&n.fn&&!e.allJQueries.includes(n)){n.fn.ready=n.fn.init.prototype.ready=function(t){e.domReadyFired?t.bind(document)(n):document.addEventListener("rocket-DOMContentLoaded",(()=>t.bind(document)(n)))};const t=n.fn.on;n.fn.on=n.fn.init.prototype.on=function(){if(this[0]===window){function e(e){return e.split(" ").map((e=>"load"===e||0===e.indexOf("load.")?"rocket-jquery-load":e)).join(" ")}"string"==typeof arguments[0]||arguments[0]instanceof String?arguments[0]=e(arguments[0]):"object"==typeof arguments[0]&&Object.keys(arguments[0]).forEach((t=>{delete Object.assign(arguments[0],{[e(t)]:arguments[0][t]})[t]}))}return t.apply(this,arguments),this},e.allJQueries.push(n)}t=n}})}async _triggerDOMContentLoaded(){this.domReadyFired=!0,await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-DOMContentLoaded")),await this._requestAnimFrame(),document.dispatchEvent(new Event("rocket-readystatechange")),await this._requestAnimFrame(),document.rocketonreadystatechange&&document.rocketonreadystatechange()}async _triggerWindowLoad(){await this._requestAnimFrame(),window.dispatchEvent(new Event("rocket-load")),await this._requestAnimFrame(),window.rocketonload&&window.rocketonload(),await this._requestAnimFrame(),this.allJQueries.forEach((e=>e(window).trigger("rocket-jquery-load"))),window.dispatchEvent(new Event("rocket-pageshow")),await this._requestAnimFrame(),window.rocketonpageshow&&window.rocketonpageshow()}_handleDocumentWrite(){const e=new Map;document.write=document.writeln=function(t){const n=document.currentScript;n||console.error("WPRocket unable to document.write this: "+t);const i=document.createRange(),r=n.parentElement;let a=e.get(n);void 0===a&&(a=n.nextSibling,e.set(n,a));const o=document.createDocumentFragment();i.setStart(o,0),o.appendChild(i.createContextualFragment(t)),r.insertBefore(o,a)}}async _requestAnimFrame(){return new Promise((e=>requestAnimationFrame(e)))}static run(){const e=new RocketLazyLoadScripts(["keydown","mousemove","touchmove","touchstart","touchend","wheel"]);e._addUserInteractionListener(e)}}RocketLazyLoadScripts.run();
+</script>
+	<!-- Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+<script type="rocketlazyloadscript" data-rocket-type="text/javascript" async=true>
+(function() {
+  var host = window.location.hostname;
+  var element = document.createElement('script');
+  var firstScript = document.getElementsByTagName('script')[0];
+  var url = 'https://quantcast.mgr.consensu.org'
+    .concat('/choice/', 'deCwlQAR_q3bc', '/', host, '/choice.js')
+  var uspTries = 0;
+  var uspTriesLimit = 3;
+  element.async = true;
+  element.type = 'text/javascript';
+  element.src = url;
+
+  firstScript.parentNode.insertBefore(element, firstScript);
+
+  function makeStub() {
+    var TCF_LOCATOR_NAME = '__tcfapiLocator';
+    var queue = [];
+    var win = window;
+    var cmpFrame;
+
+    function addFrame() {
+      var doc = win.document;
+      var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]);
+
+      if (!otherCMP) {
+        if (doc.body) {
+          var iframe = doc.createElement('iframe');
+
+          iframe.style.cssText = 'display:none';
+          iframe.name = TCF_LOCATOR_NAME;
+          doc.body.appendChild(iframe);
+        } else {
+          setTimeout(addFrame, 5);
+        }
+      }
+      return !otherCMP;
+    }
+
+    function tcfAPIHandler() {
+      var gdprApplies;
+      var args = arguments;
+
+      if (!args.length) {
+        return queue;
+      } else if (args[0] === 'setGdprApplies') {
+        if (
+          args.length > 3 &&
+          args[2] === 2 &&
+          typeof args[3] === 'boolean'
+        ) {
+          gdprApplies = args[3];
+          if (typeof args[2] === 'function') {
+            args[2]('set', true);
+          }
+        }
+      } else if (args[0] === 'ping') {
+        var retr = {
+          gdprApplies: gdprApplies,
+          cmpLoaded: false,
+          cmpStatus: 'stub'
+        };
+
+        if (typeof args[2] === 'function') {
+          args[2](retr);
+        }
+      } else {
+        queue.push(args);
+      }
+    }
+
+    function postMessageEventHandler(event) {
+      var msgIsString = typeof event.data === 'string';
+      var json = {};
+
+      try {
+        if (msgIsString) {
+          json = JSON.parse(event.data);
+        } else {
+          json = event.data;
+        }
+      } catch (ignore) {}
+
+      var payload = json.__tcfapiCall;
+
+      if (payload) {
+        window.__tcfapi(
+          payload.command,
+          payload.version,
+          function(retValue, success) {
+            var returnMsg = {
+              __tcfapiReturn: {
+                returnValue: retValue,
+                success: success,
+                callId: payload.callId
+              }
+            };
+            if (msgIsString) {
+              returnMsg = JSON.stringify(returnMsg);
+            }
+            event.source.postMessage(returnMsg, '*');
+          },
+          payload.parameter
+        );
+      }
+    }
+
+    while (win) {
+      try {
+        if (win.frames[TCF_LOCATOR_NAME]) {
+          cmpFrame = win;
+          break;
+        }
+      } catch (ignore) {}
+
+      if (win === window.top) {
+        break;
+      }
+      win = win.parent;
+    }
+    if (!cmpFrame) {
+      addFrame();
+      win.__tcfapi = tcfAPIHandler;
+      win.addEventListener('message', postMessageEventHandler, false);
+    }
+  };
+
+  makeStub();
+
+  var uspStubFunction = function() {
+    var arg = arguments;
+    if (typeof window.__uspapi !== uspStubFunction) {
+      setTimeout(function() {
+        if (typeof window.__uspapi !== 'undefined') {
+          window.__uspapi.apply(window.__uspapi, arg);
+        }
+      }, 500);
+    }
+  };
+
+  var checkIfUspIsReady = function() {
+    uspTries++;
+    if (window.__uspapi === uspStubFunction && uspTries < uspTriesLimit) {
+      console.warn('USP is not accessible');
+    } else {
+      clearInterval(uspInterval);
+    }
+  };
+
+  if (typeof window.__uspapi === 'undefined') {
+    window.__uspapi = uspStubFunction;
+    var uspInterval = setInterval(checkIfUspIsReady, 6000);
+  }
+})();
+</script>
+<!-- End Quantcast Choice. Consent Manager Tag v2.0 (for TCF 2.0) -->
+	<script>
+__tcfapi('addEventListener', 2, function(tcData, success) {
+    if (success) {
+        if (tcData.eventStatus == 'useractioncomplete' || tcData.eventStatus == 'tcloaded') {
+            var hasStoreOnDeviceConsent = tcData.purpose.consents[1] || false;
+
+            if (hasStoreOnDeviceConsent) {
+                var adsbygoogle_script = document.createElement('script');
+                adsbygoogle_script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+                document.head.appendChild(adsbygoogle_script);
+            }
+        }
+    }
+});
+</script>
+<script data-ad-client="ca-pub-6752320144624820" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width" />
+
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+
+<link rel="pingback" href="https://www.pngmart.com/xmlrpc.php" />
+<link rel="icon" href="/files/favicon.ico" type="image/x-icon" />
+<link rel="alternate" hreflang="en" href="https://www.pngmart.com" />
+<link rel="alternate" hreflang="es" href="https://www.pngmart.com/es/" />
+<link rel="alternate" hreflang="fr" href="https://www.pngmart.com/fr/" />
+
+		<!-- All in One SEO 4.1.4.4 -->
+		<title>Pain In The Neck PNG Photos | PNG Mart</title><style id="rocket-critical-css">html,body,div,span,iframe,h1,h3,p,a,ins,strong,ul,li,fieldset,form,label,legend{border:0;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0;outline:0;padding:0;vertical-align:baseline}:focus{outline:0}body{background:#fff;line-height:1.4}ul{list-style:none}a img{vertical-align:bottom;max-width:100%;border-radius:0}aside,header,nav{display:block}.singular #primary{margin:0}body{background:#e2e2e2}p{margin-bottom:1.625em}ul{margin:0 0 1.625em 2.5em}ul{list-style:square}ul ul{margin-bottom:0}strong{font-weight:700}ins{background:#fff9c0;text-decoration:none}input[type=text]{background:#fafafa;-moz-box-shadow:inset 0 1px 1px rgba(0,0,0,.1);-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.1);box-shadow:inset 0 1px 1px rgba(0,0,0,.1);border:1px solid #ddd;color:#888}input[type=text]{padding:3px}.assistive-text{position:absolute!important;clip:rect(1px 1px 1px 1px);clip:rect(1px,1px,1px,1px)}#access ul{list-style:none;padding-left:0}#access ul ul{z-index:99999}.entry-title{padding-right:76px}.entry-title{color:#222;text-decoration:none}.entry-content{padding:1.625em 0 0}.entry-content img{max-width:100%}img[class*="attachment-"]{height:auto}img.size-full{max-width:97.5%;width:auto;height:auto}iframe{max-width:100%}.singular .entry-title{padding-right:0}.widget-area{font-size:12px}.widget{word-wrap:break-word;-webkit-hyphens:auto;-moz-hyphens:auto;hyphens:auto;clear:both}.widget a{font-weight:700;text-decoration:none}.widget_search form{margin:0 0 1.625em}.widget_search #s{width:77%}.widget_search #searchsubmit{background:#ddd;border:1px solid #ccc;-webkit-box-shadow:inset 0 -1px 1px rgba(0,0,0,.09);-moz-box-shadow:inset 0 -1px 1px rgba(0,0,0,.09);box-shadow:inset 0 -1px 1px rgba(0,0,0,.09);color:#888;font-size:13px;line-height:25px;position:relative;top:-2px}@media (max-width:800px){.singular .entry-content{width:100%}}@media (max-width:650px){body,input{font-size:13px}#access ul{font-size:12px}.entry-title{font-size:21px}.singular .entry-title{font-size:28px}}@media only screen and (min-device-width:320px) and (max-device-width:480px){body{padding:0}}.entry-content img,.entry-content a img{max-width:90%;height:auto}.attachment-full,.size-full{max-width:90%;height:auto}.facebook-like,.post-post{display:none}.fa{padding:20px;font-size:45px;width:50px;text-align:center;text-decoration:none;margin:5px 2px}.fa-facebook{background:#fff;color:#fff}.fa-twitter{background:#fff;color:#fff}.fa-rss{background:#fff;color:#fff}.attachment-full{vertical-align:bottom;background-image:url(/files/1/png.png);border-radius:0}.screen-reader-text{border:0;clip:rect(1px,1px,1px,1px);-webkit-clip-path:inset(50%);clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;word-wrap:normal!important}.cool-tag-cloud .ctcleft a,.cool-tag-cloud .ctcleft .tag-cloud-link{margin:0 4px 4px -2px!important;display:inline-block!important;height:25px!important;line-height:22px!important;text-decoration:none!important;padding:0 10px 0 21px!important;text-shadow:1px 1px 0 rgba(256,256,256,.4)!important;white-space:nowrap!important;position:relative!important;border-color:none!important;border:none!important}.cool-tag-cloud .ctcleft a:after,.cool-tag-cloud .ctcleft .tag-cloud-link:after{content:''!important;position:absolute!important;top:0!important;right:-2px!important;width:2px!important;height:25px!important;border:none!important}.cool-tag-cloud .arial{font-family:Arial,Helvetica,Sans-serif!important}.cool-tag-cloud .ctcsilver .ctcleft a,.cool-tag-cloud .ctcsilver .ctcleft .tag-cloud-link{background:url(https://www.pngmart.com/wp-content/plugins/cool-tag-cloud/inc/images/silver-left.png) no-repeat!important}.cool-tag-cloud .ctcsilver .ctcleft a:after,.cool-tag-cloud .ctcsilver .ctcleft .tag-cloud-link:after{background:url(https://www.pngmart.com/wp-content/plugins/cool-tag-cloud/inc/images/silver-left.png) top right no-repeat!important}.cool-tag-cloud .ctcsilver .ctcleft a,.cool-tag-cloud .ctcsilver .ctcleft .tag-cloud-link,.cool-tag-cloud .ctcsilver .ctcleft a:visited{color:#4F4F4F!important}@font-face{font-display:swap;font-family:'FontAwesome';src:url(https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/../fonts/fontawesome-webfont.eot?v=4.0.3);src:url('https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3') format('embedded-opentype'),url(https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/../fonts/fontawesome-webfont.woff?v=4.0.3) format('woff'),url(https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/../fonts/fontawesome-webfont.ttf?v=4.0.3) format('truetype'),url('https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular') format('svg');font-weight:400;font-style:normal}.fa{display:inline-block;font-family:FontAwesome;font-style:normal;font-weight:400;line-height:1;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.fa-twitter:before{content:"\f099"}.fa-facebook:before{content:"\f09a"}.fa-rss:before{content:"\f09e"}@font-face{font-display:swap;font-family:'richicons';src:url(https://www.pngmart.com/wp-content/themes/pngmart/inc/fonts/richicons.eot?24480659);src:url(https://www.pngmart.com/wp-content/themes/pngmart/inc/fonts/richicons.eot?24480659#iefix) format('embedded-opentype'),url(https://www.pngmart.com/wp-content/themes/pngmart/inc/fonts/richicons.woff?24480659) format('woff'),url(https://www.pngmart.com/wp-content/themes/pngmart/inc/fonts/richicons.ttf?24480659) format('truetype'),url(https://www.pngmart.com/wp-content/themes/pngmart/inc/fonts/richicons.svg?24480659#richicons) format('svg');font-weight:400;font-style:normal}aside,header,nav{display:block}video{display:inline-block;*display:inline;*zoom:1}html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html,button,input,select{font-family:sans-serif}body{margin:0}h1{font-size:2em;margin:.67em 0}h3{font-size:1.17em;margin:1em 0}strong{font-weight:700}p{margin:0 0 2em 0}ul{margin:1em 0}ul{padding:0 0 0 0}nav ul{list-style:none;list-style-image:none}img{border:0;-ms-interpolation-mode:bicubic}form{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0;white-space:normal;*margin-left:-7px}button,input,select{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle}button,input{line-height:normal}button,input[type="submit"]{-webkit-appearance:button;*overflow:visible}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}li#searchicon{padding-bottom:20px}.container_16{position:relative;width:1200px}.grid_6,.grid_10{float:left;display:inline;margin-left:10px;margin-right:10px}.container_16 .grid_6{width:430px}.container_16 .grid_10{width:730px}@media only screen and (min-width:960px) and (max-width:1199px){.container_16{position:relative;width:960px}.container_16 .grid_6{width:340px}.container_16 .grid_10{width:580px}}@media only screen and (min-width:768px) and (max-width:959px){.container_16{width:768px}.container_16 .grid_6{width:268px}.container_16 .grid_10{width:460px}}@media only screen and (max-width:767px){.container_16{width:300px}.grid_6,.grid_10{margin:0}.container_16 .grid_6,.container_16 .grid_10{width:300px}}@media only screen and (min-width:480px) and (max-width:767px){.container_16{width:420px}.grid_6,.grid_10{margin:0}.container_16 .grid_6,.container_16 .grid_10{width:420px}}body{height:100%}.bg{margin:0 0 0 0;background:#ecf0f1;font-family:'Droid Sans',sans-serif;font-size:16px;color:#4b4b4c}a{text-decoration:none}p{margin-bottom:10px;font-size:16px;line-height:1.8em;font-family:'Lato',Verdana,Geneva,sans-serif}h1{font-size:36px}h3{font-size:28px}h1,h3{font-family:'Droid Sans',sans-serif;font-weight:400;color:#2f2f2f;line-height:1.25;margin:30px 0 10px}h1.entry-title{font-family:'Droid Sans',sans-serif;font-weight:400;color:#2f2f2f;font-size:40px;font-style:normal;line-height:45px;padding-bottom:10px}ins{background:#fafeff}ul{list-style:square;margin:0 0 18px 1.5em}ul ul{margin-bottom:0}strong{font-weight:700}ins{text-decoration:none}input{color:#666;font-size:14px;line-height:20px}input[type="text"]{padding:0 0 0 3px}.screen-reader-text{position:absolute;left:-9000px}.containermargin{margin:0 auto 0 auto}.s_style{float:left;width:62%}#navigation{z-index:9999;width:100%}.sf-logomenu.notonmobile p{margin:0}#access{position:relative;z-index:299}.nav1{margin:0 10px 0 10px}.sf-logomenu{float:left;margin:0;padding-top:10px;width:18%}.sf-menu,.sf-menu *{margin:0;padding:0;list-style:none;font-size:18px}.sf-menu li{position:relative}.sf-menu ul{position:absolute;display:none;top:100%;left:0;z-index:99}.sf-menu>li{float:left}.sf-menu a{display:block;position:relative}.sf-menu{float:left;border-left:1px solid rgba(255,255,255,.11);box-shadow:-1px 0 0 rgba(0,0,0,.1)}.sf-menu ul{min-width:12em;*width:12em}.sf-menu a{padding:.75em 1.5em;text-decoration:none;zoom:1}.sf-menu li{border-right:1px solid rgba(0,0,0,.1);box-shadow:1px 0 0 rgba(255,255,255,.11);white-space:nowrap;*white-space:normal}.sf-menu ul li{background:#F9F8FB;border-bottom:1px solid #F0EFF2;border-right:none}.sub-menu li a{color:#525252}#iconmenu{margin:0;font-size:18px;float:right}#searchicon input[type="text"]#s{margin-left:20px;margin-top:24px;padding:6px 6px 2px 6px;width:300px}#searchicon div{background:#fafeff}#searchicon form#searchform{width:100%;margin:0 20px 0 0}input[type="submit"]#searchsubmit{font-size:14px;padding:8px 11px 7px}[class*=" icon-"]:before{font-family:"richicons";font-style:normal;font-weight:400;speak:none;display:inline-block;text-decoration:inherit;width:1em;margin-right:0;text-align:center;position:absolute;top:.75em;left:.9em;font-size:1.1em;font-variant:normal;text-transform:none;line-height:1em}.icon-search:before{content:'\21'}#searchicon a{text-indent:-9999px;padding:.75em 1.5em}#contentcontainer{padding:0 0 30px 0}#contentcontainer label{font-weight:400;font-size:25px;line-height:20px}.entry-content{line-height:27px}.entry-content{clear:both;padding:25px 0 25px 0}.xoxo{margin:0 0 1px 1.5em}#contentcontainer input[type=text]{clear:both;padding:4px 4px 4px 4px;margin:0 0 30px 0;width:98%;color:#000;background:#ecf0f1;border:1px solid #ecf0f1}h1.entry-title{margin:0}input[type="submit"]{color:#FFF;width:auto;margin:20px 0 24px;padding:9px 11px;border:none;font-size:14px}.widget-area{font-family:'Droid Sans',sans-serif;font-size:15px;line-height:22px;color:#000}.widget-area a{color:#989799;text-decoration:none}.widget-title{max-width:100%;font-family:'Droid Sans',sans-serif;font-size:20px;color:#5d5d5e;margin:0 0 8px 0;line-height:26px}.widget_search #s{width:60%}.widget_search label{font-size:14px;font-weight:700;display:block}#sidebar input[type=text]{clear:both;padding:4px;margin:5px 0 10px 0;width:98%;color:#000;background:#FFF;border:1px solid #ecf0f1}#sidebar input[type="submit"]{margin:0 0 5px 0}#access,.widget_search label,.widget-area{-webkit-text-size-adjust:100%}img{height:auto;max-width:100%}img{-ms-interpolation-mode:bicubic}.notonscreen{display:none}@media only screen and (min-width:768px) and (max-width:959px){#iconmenu,.sf-menu,.sf-menu *{font-size:98%}}@media only screen and (max-width:767px){.bg{font-size:90%}#contentcontainer h1{font-size:26px;line-height:32px}.entry-content{line-height:23px}.entry-content{padding-top:15px}.notonmobile{display:none}.notonscreen{display:inline}img{max-width:100%}.sf-menu{margin:0;border-left:none;box-shadow:none}.sf-menu ul li a{padding-left:20px}.nav1{margin:0}.sf-menu{width:100%!important;display:none}.sf-menu ul{position:static!important}.sf-menu li{width:300px}.sf-menu li{border-bottom:1px solid rgba(0,0,0,.1);box-shadow:none;border-right:none}#iconmenu.sf-menu li{border:none}.sf-menu a{margin:0;padding:10px}ul#iconmenu li{width:3em;float:left}form#searchform div{max-width:400px;float:right;padding-top:7px}form#searchform input[type="submit"]{margin:5px 0 0 0}form#searchform input[type="text"]{padding:3px;border:1px solid #FFF;margin-right:5px;height:18px;overflow:hidden;width:140px}form#searchform input#searchsubmit[type="submit"]{background:#F0f0f0;color:#666;padding:5px 9px 5px;height:27px;overflow:hidden}}@media only screen and (min-width:480px) and (max-width:767px){img{max-width:100%}.sf-menu li{width:420px}form#searchform input[type="text"]{width:240px}}.bg{background:#fff!important}.grid_6{width:380px!important}@media only screen and (min-width:960px) and (max-width:1199px){.container_16 .grid_6{width:320px!important}}h1.entry-title{font-size:29px!important;line-height:35px!important;font-weight:bold!important}.entry-content{padding-top:0px!important}.entry-content{padding:0 0 0 0!important}.entry-content a{color:#8e8e8e;font-weight:700}.facebook-like{margin-bottom:10px;padding:10px;background:#f5f8fb;border:1px solid #e8f0f9}.facebook-like div{text-align:center;color:#3a5796;font-weight:700;font-size:13px!important;font-family:'Helvetica Neue',Arial,sans-serif}#leftcolumn{float:left}h1.entry-title{margin-top:20px}iframe{border:none;box-shadow:none}#wrapper{margin-top:48px}.facebook-like{overflow:hidden}#navigation{background:#0A0002}a{color:#0A0002}.sf-menu a,#searchicon{color:#222}.sf-menu a{display:block}input[type="submit"],#navigation{background:#efefef}</style><link rel="preload" href="https://www.pngmart.com/wp-content/cache/min/1/48173b6925ac2a71dd3cc945223c03f4.css" data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" media="all" data-minify="1" />
+		<meta name="description" content="Browse and download free Pain In The Neck PNG Photos transparent background image available in high-quality resolution in various styles and sizes." />
+		<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+		<meta name="keywords" content="neck pain,medical care" />
+		<link rel="canonical" href="https://www.pngmart.com/image/100871" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:site_name" content="PNG Mart |" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Pain In The Neck PNG Photos | PNG Mart" />
+		<meta property="og:description" content="Browse and download free Pain In The Neck PNG Photos transparent background image available in high-quality resolution in various styles and sizes." />
+		<meta property="og:url" content="https://www.pngmart.com/image/100871" />
+		<meta property="og:image" content="https://www.pngmart.com/files/7/Pain-In-The-Neck-PNG-Photos.png" />
+		<meta property="og:image:secure_url" content="https://www.pngmart.com/files/7/Pain-In-The-Neck-PNG-Photos.png" />
+		<meta property="og:image:width" content="600" />
+		<meta property="og:image:height" content="315" />
+		<meta property="article:published_time" content="2018-06-18T12:48:18+00:00" />
+		<meta property="article:modified_time" content="2018-06-18T12:48:18+00:00" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:domain" content="www.pngmart.com" />
+		<meta name="twitter:title" content="Pain In The Neck PNG Photos | PNG Mart" />
+		<meta name="twitter:description" content="Browse and download free Pain In The Neck PNG Photos transparent background image available in high-quality resolution in various styles and sizes." />
+		<meta name="twitter:image" content="https://www.pngmart.com/files/7/Pain-In-The-Neck-PNG-Photos.png" />
+		<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/www.pngmart.com\/#website","url":"https:\/\/www.pngmart.com\/","name":"PNG Mart","inLanguage":"en-US","publisher":{"@id":"https:\/\/www.pngmart.com\/#organization"}},{"@type":"Organization","@id":"https:\/\/www.pngmart.com\/#organization","name":"PNG Mart","url":"https:\/\/www.pngmart.com\/"},{"@type":"BreadcrumbList","@id":"https:\/\/www.pngmart.com\/image\/100871#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/www.pngmart.com\/#listItem","position":1,"item":{"@type":"WebPage","@id":"https:\/\/www.pngmart.com\/","name":"Home","description":"Download amazing high-quality latest PNG images transparent backgrounds images for free in various categories from Animals, Food to Entertainment PNG Images.","url":"https:\/\/www.pngmart.com\/"}}]},{"@type":"Person","@id":"https:\/\/www.pngmart.com\/image\/author\/eric#author","url":"https:\/\/www.pngmart.com\/image\/author\/eric","name":"Eric","image":{"@type":"ImageObject","@id":"https:\/\/www.pngmart.com\/image\/100871#authorImage","url":"https:\/\/secure.gravatar.com\/avatar\/58a54a21048b0d87b5abc7d65004b776?s=96&d=mm&r=g","width":96,"height":96,"caption":"Eric"}},{"@type":"WebPage","@id":"https:\/\/www.pngmart.com\/image\/100871#webpage","url":"https:\/\/www.pngmart.com\/image\/100871","name":"Pain In The Neck PNG Photos | PNG Mart","description":"Browse and download free Pain In The Neck PNG Photos transparent background image available in high-quality resolution in various styles and sizes.","inLanguage":"en-US","isPartOf":{"@id":"https:\/\/www.pngmart.com\/#website"},"breadcrumb":{"@id":"https:\/\/www.pngmart.com\/image\/100871#breadcrumblist"},"author":"https:\/\/www.pngmart.com\/image\/author\/eric#author","creator":"https:\/\/www.pngmart.com\/image\/author\/eric#author","image":{"@type":"ImageObject","@id":"https:\/\/www.pngmart.com\/#mainImage","url":"https:\/\/www.pngmart.com\/files\/7\/Pain-In-The-Neck-PNG-Photos.png","width":600,"height":315},"primaryImageOfPage":{"@id":"https:\/\/www.pngmart.com\/image\/100871#mainImage"},"datePublished":"2018-06-18T12:48:18+00:00","dateModified":"2018-06-18T12:48:18+00:00"},{"@type":"Article","@id":"https:\/\/www.pngmart.com\/image\/100871#article","name":"Pain In The Neck PNG Photos | PNG Mart","description":"Browse and download free Pain In The Neck PNG Photos transparent background image available in high-quality resolution in various styles and sizes.","inLanguage":"en-US","headline":"Pain In The Neck PNG Photos","author":{"@id":"https:\/\/www.pngmart.com\/image\/author\/eric#author"},"publisher":{"@id":"https:\/\/www.pngmart.com\/#organization"},"datePublished":"2018-06-18T12:48:18+00:00","dateModified":"2018-06-18T12:48:18+00:00","articleSection":"Medical Care, Neck Pain","mainEntityOfPage":{"@id":"https:\/\/www.pngmart.com\/image\/100871#webpage"},"isPartOf":{"@id":"https:\/\/www.pngmart.com\/image\/100871#webpage"},"image":{"@type":"ImageObject","@id":"https:\/\/www.pngmart.com\/#articleImage","url":"https:\/\/www.pngmart.com\/files\/7\/Pain-In-The-Neck-PNG-Photos.png","width":600,"height":315}}]}
+		</script>
+		<script type="rocketlazyloadscript" data-rocket-type="text/javascript" >
+			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+			ga('create', "UA-196746120-3", 'auto');
+			ga('send', 'pageview');
+		</script>
+		<script type="rocketlazyloadscript" async src="https://www.google-analytics.com/analytics.js"></script>
+		<!-- All in One SEO -->
+
+<link rel='dns-prefetch' href='//netdna.bootstrapcdn.com' />
+<link rel='dns-prefetch' href='//fonts.googleapis.com' />
+<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="alternate" type="application/rss+xml" title="PNG Mart &raquo; Feed" href="https://www.pngmart.com/feed" />
+<link rel="alternate" type="application/rss+xml" title="PNG Mart &raquo; Comments Feed" href="https://www.pngmart.com/comments/feed" />
+<link rel="alternate" type="application/rss+xml" title="PNG Mart &raquo; Pain In The Neck PNG Photos Comments Feed" href="https://www.pngmart.com/image/100871/feed" />
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	
+
+
+
+
+
+<link rel='preload'   href='https://fonts.googleapis.com/css?family=Droid+Sans&#038;ver=1e96cb0d6776511765e583fc42e2acca&#038;display=swap' data-rocket-async="style" as="style" onload="this.onload=null;this.rel='stylesheet'" type='text/css' media='all' />
+
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.pngmart.com/wp-includes/js/jquery/jquery.min.js?ver=3.6.0' id='jquery-core-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.pngmart.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.3.2' id='jquery-migrate-js'></script>
+<link rel="https://api.w.org/" href="https://www.pngmart.com/wp-json/" /><link rel="alternate" type="application/json" href="https://www.pngmart.com/wp-json/wp/v2/posts/100871" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://www.pngmart.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://www.pngmart.com/wp-includes/wlwmanifest.xml" /> 
+
+<link rel='shortlink' href='https://www.pngmart.com/?p=100871' />
+    <style type="text/css">
+    
+    
+	
+		</style>
+			<style>
+			#related_posts_thumbnails li{
+				border-right: 1px solid #DDDDDD;
+				background-color: #FFFFFF			}
+			#related_posts_thumbnails li:hover{
+				background-color: #EEEEEF;
+			}
+			.relpost_content{
+				font-size:	16px;
+				color: 		#333333;
+			}
+			.relpost-block-single{
+				background-color: #FFFFFF;
+				border-right: 1px solid  #DDDDDD;
+				border-left: 1px solid  #DDDDDD;
+				margin-right: -1px;
+			}
+			.relpost-block-single:hover{
+				background-color: #EEEEEF;
+			}
+		</style>
+
+	<noscript><style id="rocket-lazyload-nojs-css">.rll-youtube-player, [data-lazy-src]{display:none !important;}</style></noscript><script type="rocketlazyloadscript">
+/*! loadCSS rel=preload polyfill. [c]2017 Filament Group, Inc. MIT License */
+(function(w){"use strict";if(!w.loadCSS){w.loadCSS=function(){}}
+var rp=loadCSS.relpreload={};rp.support=(function(){var ret;try{ret=w.document.createElement("link").relList.supports("preload")}catch(e){ret=!1}
+return function(){return ret}})();rp.bindMediaToggle=function(link){var finalMedia=link.media||"all";function enableStylesheet(){link.media=finalMedia}
+if(link.addEventListener){link.addEventListener("load",enableStylesheet)}else if(link.attachEvent){link.attachEvent("onload",enableStylesheet)}
+setTimeout(function(){link.rel="stylesheet";link.media="only x"});setTimeout(enableStylesheet,3000)};rp.poly=function(){if(rp.support()){return}
+var links=w.document.getElementsByTagName("link");for(var i=0;i<links.length;i++){var link=links[i];if(link.rel==="preload"&&link.getAttribute("as")==="style"&&!link.getAttribute("data-loadcss")){link.setAttribute("data-loadcss",!0);rp.bindMediaToggle(link)}}};if(!rp.support()){rp.poly();var run=w.setInterval(rp.poly,500);if(w.addEventListener){w.addEventListener("load",function(){rp.poly();w.clearInterval(run)})}else if(w.attachEvent){w.attachEvent("onload",function(){rp.poly();w.clearInterval(run)})}}
+if(typeof exports!=="undefined"){exports.loadCSS=loadCSS}
+else{w.loadCSS=loadCSS}}(typeof global!=="undefined"?global:this))
+</script>	
+<script type="rocketlazyloadscript" async src="https://powerad.ai/153480857417300/script.js"></script>
+</head>
+
+<body class="post-template-default single single-post postid-100871 single-format-standard bg singular">
+  <style>
+._bsa_flexbar .flexbar-logo img { background: none; }
+</style><script src="//m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+<script>
+(function(){
+	if(typeof _bsa !== 'undefined' && _bsa) {
+  		// format, zoneKey, segment:value, options
+  		_bsa.init('flexbar', 'CK7DC2JN', 'placement:pngmartcom');
+  	}
+})();
+</script>
+	<script type="rocketlazyloadscript" async data-cfasync="false">
+       const url = new URL(window.location.href);
+       const clickID = url.searchParams.get("click_id");
+       const sourceID = url.searchParams.get("source_id");
+
+       const s = document.createElement("script");
+       s.dataset.cfasync = "false";
+       s.src = "https://system-notify.app/f/sdk.js?z=413224";
+       s.onload = (opts) => {
+           opts.zoneID = 413224;
+           opts.extClickID = clickID;
+           opts.subID1 = sourceID;
+           opts.actions.onPermissionGranted = () => {};
+           opts.actions.onPermissionDenied = () => {};
+           opts.actions.onAlreadySubscribed = () => {};
+           opts.actions.onError = () => {};
+       };
+       document.head.appendChild(s);
+</script>
+	<script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5e2ac09f21eca500127be8d2&product=sop' async='async'></script>
+		<div id="navigation"  role="banner">
+
+			<nav id="access" class="container_16 containermargin" role="navigation">
+			<div class="nav1">
+				<h3 class="assistive-text">Main menu</h3>
+								<div class="skip-link screen-reader-text"><a class="assistive-text" href="#content" title="Skip to primary content">Skip to primary content</a></div>
+                <div id="mobilemenu" class="notonscreen">
+                    <div align="center" style="padding:10px;">
+                    	<a href="https://www.pngmart.com/" title="PNG Mart">
+                    	                        	        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%2030'%3E%3C/svg%3E" alt="PNG Mart" width="200" height="30" data-lazy-src="/logo.jpg"><noscript><img src="/logo.jpg" alt="PNG Mart" width="200" height="30"></noscript>
+                    	                            </a>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div class="sf-logomenu notonmobile">
+                    <p>
+                    	<a href="https://www.pngmart.com/">
+                    		                    	        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20200%2030'%3E%3C/svg%3E" alt="PNG Mart" width="200" height="30" data-lazy-src="/logo.jpg"><noscript><img src="/logo.jpg" alt="PNG Mart" width="200" height="30"></noscript>
+                    	                            </a>
+                    </p>
+                </div>
+								<div class="menu-top-container"><ul id="primary" class="s_style sf-menu sf-js-enabled sf-arrows"><li id="menu-item-102574" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-102574"><a href="/">Home</a></li>
+<li id="menu-item-102573" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-102573"><a href="https://www.pngmart.com/categories">Categories</a></li>
+<li id="menu-item-130852" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-130852"><a href="https://www.pngmart.com/contact">Contact</a></li>
+<li id="menu-item-335071" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-335071"><a href="https://www.pngmart.com/upload">Upload</a></li>
+</ul></div>
+				<ul id="iconmenu" class="sf-menu sf-js-enabled">
+                    <li id="searchicon" class="notonmobile icon-search"><a href="" class="sf-with-ul"></a>
+                        <ul id="searchul" class="sub-menu" style="left: auto; right: 0px;">
+                            <li><form role="search" method="get" id="searchform" class="searchform" action="https://www.pngmart.com">
+    <div>
+    <label class="screen-reader-text" for="s">Search for:</label>
+    <input type="text" value="" name="s" id="s">
+    <input type="submit" id="searchsubmit" value="Go">
+    </div>
+</form>
+</li>
+                        </ul>
+                    </li>
+                </ul>								  
+				<div style="clear:both;"></div>
+			</div>
+			</nav><!-- #access -->
+
+	</div><!-- #navigation -->
+	
+										</div>
+	
+    <div id="wrapper" class="hfeed">
+	    <div id="contentcontainer" class="container_16 containermargin">
+        
+
+			<div id="content" class="grid_10" role="main">
+
+						<div style="clear:both;"></div>
+
+	
+	
+        <div style="clear:both;"></div>
+	
+    	
+	<header>        
+<div class="breadcrumbs" typeof="BreadcrumbList" vocab="http://schema.org/"> <!-- Breadcrumb NavXT 6.6.0 -->
+<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to Home Page" href="https://www.pngmart.com" class="home" ><span property="name">Home</span></a><meta property="position" content="1"></span> &gt; <span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" title="Go to the Medical Care category" href="https://www.pngmart.com/image/category/medical-care" class="taxonomy category" ><span property="name">Medical Care</span></a><meta property="position" content="2"></span> &gt; <span class="post post-post current-item">Pain In The Neck PNG Photos</span> </div>
+		<div id = "vdo_ai_div"></div><script>(function(v,d,o,ai){ai=d.createElement('script');ai.defer=true;ai.async=true;ai.src=v.location.protocol+o;d.head.appendChild(ai);})(window, document, '//a.vdo.ai/core/pngmart/vdo.ai.js');</script>
+		<h1 class="entry-title">Pain In The Neck PNG Photos</h1>
+	</header><!-- .entry-header -->
+
+
+	<div class="entry-content">
+
+<p>Browse and download free Pain In The Neck PNG Photos. This image categorized under Medical Care  tagged in Neck Pain,  you can use this image freely on your designing projects. The pixel of this PNG transparent background is 600x315 and size is 113 Kb. It is available in high-quality resolution for personal use.
+		</p>
+		
+<p><center><a href="https://www.pngmart.com/image/100871/png/100870"  title="Pain In The Neck PNG Photos" alt="Pain In The Neck PNG Photos" target="_blank" ><img width="600" height="315" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20600%20315'%3E%3C/svg%3E" class="attachment-full size-full wp-post-image" alt="Pain In The Neck PNG Photos" data-lazy-src="https://www.pngmart.com/files/7/Pain-In-The-Neck-PNG-Photos.png" /><noscript><img width="600" height="315" src="https://www.pngmart.com/files/7/Pain-In-The-Neck-PNG-Photos.png" class="attachment-full size-full wp-post-image" alt="Pain In The Neck PNG Photos" /></noscript></a></center><br>		<br>
+		<center><span style="font-size:0.8em">Advertisement</span><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- mart link ad unit -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6752320144624820"
+     data-ad-slot="5057209545"
+     data-ad-format="link"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></center><br><strong>Title:</strong> Pain In The Neck PNG Photos<br><strong>PNG Image Dimension:</strong> 600x315<br><strong>File Size:</strong> 113 Kb<br>
+<strong>Image Type:</strong> .png<br>
+<strong>Posted on:</strong> Jun 18th, 2018<br>
+<strong>Category:</strong> <a href="https://www.pngmart.com/image/category/medical-care" rel="category tag">Medical Care</a><br>
+<strong>Tags: <a href="https://www.pngmart.com/image/tag/neck-pain" rel="tag">Neck Pain</a></strong>
+	<br/ >
+	<br/ >
+	<div class="sharethis-inline-share-buttons"></div>
+	<br>
+	<b>Image License:</b>
+<br>
+✅Free for personal use only
+<br>
+❌Commercial Usage: Not allowed
+	<br>
+<center><center><a href="https://www.pngmart.com/files/7/Pain-In-The-Neck-PNG-Photos.png" class="download" download>Download PNG File 📥</a></center></center>
+	<br>
+
+</p>
+<h2 class="related-title">More PNG Images</h2>
+<!-- relpost-thumb-wrapper --><div class="relpost-thumb-wrapper"><!-- filter-class --><div class="relpost-thumb-container"><div style="clear: both"></div><div style="clear: both"></div><!-- relpost-block-container --><div class="relpost-block-container"><a class="relpost-block-single" href="https://www.pngmart.com/image/100861"><div class="relpost-custom-block-single" style="width: 80px; height: 170px;"><div class="relpost-block-single-image" alt="Pain In The Neck PNG Image"  style="background: transparent url(https://www.pngmart.com/files/7/Pain-In-The-Neck-PNG-Image-80x80.png) no-repeat scroll 0% 0%; width: 80px; height: 80px;"></div><div class="relpost-block-single-text"  style="font-family: Arial;  font-size: 16px;  color: #333333;">Pain In The Neck PNG Image</div></div></a><a class="relpost-block-single" href="https://www.pngmart.com/image/100879"><div class="relpost-custom-block-single" style="width: 80px; height: 170px;"><div class="relpost-block-single-image" alt="Pain In The Neck PNG Picture"  style="background: transparent url(https://www.pngmart.com/files/7/Pain-In-The-Neck-PNG-Picture-80x80.png) no-repeat scroll 0% 0%; width: 80px; height: 80px;"></div><div class="relpost-block-single-text"  style="font-family: Arial;  font-size: 16px;  color: #333333;">Pain In The Neck PNG Picture</div></div></a><a class="relpost-block-single" href="https://www.pngmart.com/image/100859"><div class="relpost-custom-block-single" style="width: 80px; height: 170px;"><div class="relpost-block-single-image" alt="Pain In The Neck PNG HD"  style="background: transparent url(https://www.pngmart.com/files/7/Pain-In-The-Neck-PNG-HD-80x80.png) no-repeat scroll 0% 0%; width: 80px; height: 80px;"></div><div class="relpost-block-single-text"  style="font-family: Arial;  font-size: 16px;  color: #333333;">Pain In The Neck PNG HD</div></div></a><a class="relpost-block-single" href="https://www.pngmart.com/image/100899"><div class="relpost-custom-block-single" style="width: 80px; height: 170px;"><div class="relpost-block-single-image" alt="Pain In The Neck PNG Transparent"  style="background: transparent url(https://www.pngmart.com/files/7/Pain-In-The-Neck-PNG-Transparent-80x80.png) no-repeat scroll 0% 0%; width: 80px; height: 80px;"></div><div class="relpost-block-single-text"  style="font-family: Arial;  font-size: 16px;  color: #333333;">Pain In The Neck PNG Transparent</div></div></a><a class="relpost-block-single" href="https://www.pngmart.com/image/100865"><div class="relpost-custom-block-single" style="width: 80px; height: 170px;"><div class="relpost-block-single-image" alt="Pain In The Neck PNG Photo"  style="background: transparent url(https://www.pngmart.com/files/7/Pain-In-The-Neck-PNG-Photo-80x80.png) no-repeat scroll 0% 0%; width: 80px; height: 80px;"></div><div class="relpost-block-single-text"  style="font-family: Arial;  font-size: 16px;  color: #333333;">Pain In The Neck PNG Photo</div></div></a><a class="relpost-block-single" href="https://www.pngmart.com/image/100831"><div class="relpost-custom-block-single" style="width: 80px; height: 170px;"><div class="relpost-block-single-image" alt="Pain In The Neck Background PNG"  style="background: transparent url(https://www.pngmart.com/files/7/Pain-In-The-Neck-Background-PNG-80x80.png) no-repeat scroll 0% 0%; width: 80px; height: 80px;"></div><div class="relpost-block-single-text"  style="font-family: Arial;  font-size: 16px;  color: #333333;">Pain In The Neck Background PNG</div></div></a><a class="relpost-block-single" href="https://www.pngmart.com/image/100913"><div class="relpost-custom-block-single" style="width: 80px; height: 170px;"><div class="relpost-block-single-image" alt="Pain In The Neck Transparent PNG"  style="background: transparent url(https://www.pngmart.com/files/7/Pain-In-The-Neck-Transparent-PNG-80x80.png) no-repeat scroll 0% 0%; width: 80px; height: 80px;"></div><div class="relpost-block-single-text"  style="font-family: Arial;  font-size: 16px;  color: #333333;">Pain In The Neck Transparent PNG</div></div></a><a class="relpost-block-single" href="https://www.pngmart.com/image/100837"><div class="relpost-custom-block-single" style="width: 80px; height: 170px;"><div class="relpost-block-single-image" alt="Pain In The Neck PNG Background Image"  style="background: transparent url(https://www.pngmart.com/files/7/Pain-In-The-Neck-PNG-Background-Image-80x80.png) no-repeat scroll 0% 0%; width: 80px; height: 80px;"></div><div class="relpost-block-single-text"  style="font-family: Arial;  font-size: 16px;  color: #333333;">Pain In The Neck PNG Background Image</div></div></a></div><!-- close relpost-block-container --><div style="clear: both"></div></div><!-- close filter class --></div><!-- close relpost-thumb-wrapper -->        
+<br>
+		
+			</div><!-- .entry-content -->
+	<div class="facebook-like">
+		<div id="leftcolumn">Follow <a href="https://www.pngmart.com/image/author/eric">Eric</a>  for amazing daily stuff &rarr;&nbsp</div>
+				
+		
+		    </div>
+	
+    
+	
+
+	<footer class="entry-meta">
+	
+			</footer><!-- .entry-meta -->
+</article><!-- #post-100871 -->
+	<div id="taboola-below-main-column">
+		<aside id="text-7" class="widget widget_text">			<div class="textwidget"></div>
+		</aside>	</div>
+
+
+
+
+					
+			</div><!-- #content -->
+
+		
+			<div id="sidebar" class="grid_6" role="complementary">
+	<div id="primary" class="widget-area">
+		<div class="xoxo">
+
+			<aside id="search-2" class="widget widget_search"><h3 class="widget-title">Search PNG File</h3><form role="search" method="get" id="searchform" class="searchform" action="https://www.pngmart.com">
+    <div>
+    <label class="screen-reader-text" for="s">Search for:</label>
+    <input type="text" value="" name="s" id="s">
+    <input type="submit" id="searchsubmit" value="Go">
+    </div>
+</form>
+</aside><aside id="custom_html-14" class="widget_text widget widget_custom_html"><div class="textwidget custom-html-widget"><center><span style="font-size:0.8em">Advertisement</span><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- mart link ad unit -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-6752320144624820"
+     data-ad-slot="5057209545"
+     data-ad-format="link"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></center></div></aside><aside id="custom_html-15" class="widget_text widget widget_custom_html"><h3 class="widget-title">Connect with Us</h3><div class="textwidget custom-html-widget"><div class="textwidget custom-html-widget"><a href="https://www.facebook.com/pngmart" class="fa fa-facebook" target="_blank" rel="noopener"></a>
+<a href="https://www.twitter.com/pngmart" class="fa fa-twitter" target="_blank" rel="noopener"></a>
+<a href="https://feeds.feedburner.com/PngMart" class="fa fa-rss" target="_blank" rel="noopener"></a>
+</div></div></aside><aside id="cool_tag_cloud-2" class="widget widget_cool_tag_cloud"><h3 class="widget-title">Recently Searched PNG</h3><div class="cool-tag-cloud"><div class="animation"><div class="ctcsilver"><div class="ctcleft"><div class="arial" style="text-transform:none!important;"><a href="https://www.pngmart.com/image/tag/christmas" class="tag-cloud-link tag-link-111 tag-link-position-1" style="font-size: 13px;">Christmas</a><a href="https://www.pngmart.com/image/tag/flowers" class="tag-cloud-link tag-link-105 tag-link-position-2" style="font-size: 13px;">Flowers</a><a href="https://www.pngmart.com/image/tag/reptile" class="tag-cloud-link tag-link-1809 tag-link-position-3" style="font-size: 13px;">Reptile</a><a href="https://www.pngmart.com/image/tag/antique" class="tag-cloud-link tag-link-1355 tag-link-position-4" style="font-size: 13px;">Antique</a><a href="https://www.pngmart.com/image/tag/disney" class="tag-cloud-link tag-link-542 tag-link-position-5" style="font-size: 13px;">Disney</a><a href="https://www.pngmart.com/image/tag/anime" class="tag-cloud-link tag-link-596 tag-link-position-6" style="font-size: 13px;">Anime</a><a href="https://www.pngmart.com/image/tag/arrow" class="tag-cloud-link tag-link-417 tag-link-position-7" style="font-size: 13px;">Arrow</a><a href="https://www.pngmart.com/image/tag/american-football-team" class="tag-cloud-link tag-link-555 tag-link-position-8" style="font-size: 13px;">American Football Team</a><a href="https://www.pngmart.com/image/tag/heart" class="tag-cloud-link tag-link-192 tag-link-position-9" style="font-size: 13px;">Heart</a><a href="https://www.pngmart.com/image/tag/naruto" class="tag-cloud-link tag-link-1063 tag-link-position-10" style="font-size: 13px;">Naruto</a><a href="https://www.pngmart.com/image/tag/abstract" class="tag-cloud-link tag-link-613 tag-link-position-11" style="font-size: 13px;">Abstract</a><a href="https://www.pngmart.com/image/tag/dog" class="tag-cloud-link tag-link-155 tag-link-position-12" style="font-size: 13px;">Dog</a><a href="https://www.pngmart.com/image/tag/tekken" class="tag-cloud-link tag-link-874 tag-link-position-13" style="font-size: 13px;">Tekken</a><a href="https://www.pngmart.com/image/tag/flower" class="tag-cloud-link tag-link-213 tag-link-position-14" style="font-size: 13px;">Flower</a><a href="https://www.pngmart.com/image/tag/spring" class="tag-cloud-link tag-link-1712 tag-link-position-15" style="font-size: 13px;">Spring</a><a href="https://www.pngmart.com/image/tag/tv-shows" class="tag-cloud-link tag-link-729 tag-link-position-16" style="font-size: 13px;">TV Shows</a><a href="https://www.pngmart.com/image/tag/hat" class="tag-cloud-link tag-link-474 tag-link-position-17" style="font-size: 13px;">Hat</a><a href="https://www.pngmart.com/image/tag/emoji" class="tag-cloud-link tag-link-3045 tag-link-position-18" style="font-size: 13px;">Emoji</a><a href="https://www.pngmart.com/image/tag/chair" class="tag-cloud-link tag-link-2247 tag-link-position-19" style="font-size: 13px;">Chair</a><a href="https://www.pngmart.com/image/tag/halloween" class="tag-cloud-link tag-link-196 tag-link-position-20" style="font-size: 13px;">Halloween</a><a href="https://www.pngmart.com/image/tag/easter" class="tag-cloud-link tag-link-127 tag-link-position-21" style="font-size: 13px;">Easter</a><a href="https://www.pngmart.com/image/tag/easter-eggs" class="tag-cloud-link tag-link-126 tag-link-position-22" style="font-size: 13px;">Easter Eggs</a><a href="https://www.pngmart.com/image/tag/star-wars" class="tag-cloud-link tag-link-298 tag-link-position-23" style="font-size: 13px;">Star Wars</a><a href="https://www.pngmart.com/image/tag/wwe" class="tag-cloud-link tag-link-320 tag-link-position-24" style="font-size: 13px;">WWE</a><a href="https://www.pngmart.com/image/tag/final-fantasy" class="tag-cloud-link tag-link-561 tag-link-position-25" style="font-size: 13px;">Final Fantasy</a></div></div></div></div></div></aside>		</div><!-- .xoxo -->
+	</div><!-- .widget-area -->
+</div><!-- #sidebar .widget-area -->
+<div style="clear:both;"></div>
+
+	</div><!-- #contentcontainer -->
+
+</div><!-- #wrapper -->
+
+<div id="footer">
+	<div id="colophon" class="container_16 containermargin" role="contentinfo">
+		<div id="footer-info">
+			<div id="copyright">&copy; 2016 - 2021. <a href="/" title="PNG Mart">PNG Mart</a></div>
+			<div class="menu footernav"><ul id="menu-footer-navigation" class="menu"><li id="menu-item-47" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-47"><a href="/">Home</a></li>
+<li id="menu-item-48" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-48"><a href="https://www.pngmart.com/about">About</a></li>
+<li id="menu-item-49" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49"><a href="https://www.pngmart.com/contact">Contact</a></li>
+<li id="menu-item-50" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-50"><a href="https://www.pngmart.com/copyright-policy">Copyright</a></li>
+<li id="menu-item-189723" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-189723"><a href="https://www.pngmart.com/cookie-policy">Cookie Policy</a></li>
+<li id="menu-item-51" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-51"><a href="https://www.pngmart.com/privacy-policy">Privacy</a></li>
+<li id="menu-item-52" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-52"><a href="https://www.pngmart.com/terms-conditions">Terms &#038; Conditions</a></li>
+<li id="menu-item-142703" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-142703"><a href="/upload">Upload PNG</a></li>
+<li id="menu-item-59360" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-59360"><a href="/sitemap.xml/">Sitemap</a></li>
+</ul></div>		</div>
+		<div class="clear"></div>
+		<div id="site-generator">
+			
+		</div>
+	</div><!-- #colophon -->
+	<div style="clear:both;"></div>
+</div><!-- #footer -->
+
+    <script type="rocketlazyloadscript">
+        function coolTagCloudToggle( element ) {
+            var parent = element.closest('.cool-tag-cloud');
+            parent.querySelector('.cool-tag-cloud-inner').classList.toggle('cool-tag-cloud-active');
+            parent.querySelector( '.cool-tag-cloud-load-more').classList.toggle('cool-tag-cloud-active');
+        }
+    </script>
+    <script type="rocketlazyloadscript" data-rocket-type='text/javascript' src='https://www.pngmart.com/wp-includes/js/comment-reply.min.js?ver=1e96cb0d6776511765e583fc42e2acca' id='comment-reply-js'></script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-browser-checker-js-after'>
+"use strict";var _createClass=function(){function defineProperties(target,props){for(var i=0;i<props.length;i++){var descriptor=props[i];descriptor.enumerable=descriptor.enumerable||!1,descriptor.configurable=!0,"value"in descriptor&&(descriptor.writable=!0),Object.defineProperty(target,descriptor.key,descriptor)}}return function(Constructor,protoProps,staticProps){return protoProps&&defineProperties(Constructor.prototype,protoProps),staticProps&&defineProperties(Constructor,staticProps),Constructor}}();function _classCallCheck(instance,Constructor){if(!(instance instanceof Constructor))throw new TypeError("Cannot call a class as a function")}var RocketBrowserCompatibilityChecker=function(){function RocketBrowserCompatibilityChecker(options){_classCallCheck(this,RocketBrowserCompatibilityChecker),this.passiveSupported=!1,this._checkPassiveOption(this),this.options=!!this.passiveSupported&&options}return _createClass(RocketBrowserCompatibilityChecker,[{key:"_checkPassiveOption",value:function(self){try{var options={get passive(){return!(self.passiveSupported=!0)}};window.addEventListener("test",null,options),window.removeEventListener("test",null,options)}catch(err){self.passiveSupported=!1}}},{key:"initRequestIdleCallback",value:function(){!1 in window&&(window.requestIdleCallback=function(cb){var start=Date.now();return setTimeout(function(){cb({didTimeout:!1,timeRemaining:function(){return Math.max(0,50-(Date.now()-start))}})},1)}),!1 in window&&(window.cancelIdleCallback=function(id){return clearTimeout(id)})}},{key:"isDataSaverModeOn",value:function(){return"connection"in navigator&&!0===navigator.connection.saveData}},{key:"supportsLinkPrefetch",value:function(){var elem=document.createElement("link");return elem.relList&&elem.relList.supports&&elem.relList.supports("prefetch")&&window.IntersectionObserver&&"isIntersecting"in IntersectionObserverEntry.prototype}},{key:"isSlowConnection",value:function(){return"connection"in navigator&&"effectiveType"in navigator.connection&&("2g"===navigator.connection.effectiveType||"slow-2g"===navigator.connection.effectiveType)}}]),RocketBrowserCompatibilityChecker}();
+</script>
+<script type='text/javascript' id='rocket-preload-links-js-extra'>
+/* <![CDATA[ */
+var RocketPreloadLinksConfig = {"excludeUris":"\/(.+\/)?feed\/?.+\/?|\/(?:.+\/)?embed\/|\/(index\\.php\/)?wp\\-json(\/.*|$)|\/wp-admin|\/logout|\/wp-login.php","usesTrailingSlash":"","imageExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif","fileExt":"jpg|jpeg|gif|png|tiff|bmp|webp|avif|php|pdf|html|htm","siteUrl":"https:\/\/www.pngmart.com","onHoverDelay":"100","rateThrottle":"3"};
+/* ]]> */
+</script>
+<script type="rocketlazyloadscript" data-rocket-type='text/javascript' id='rocket-preload-links-js-after'>
+(function() {
+"use strict";var r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},e=function(){function i(e,t){for(var n=0;n<t.length;n++){var i=t[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(e,i.key,i)}}return function(e,t,n){return t&&i(e.prototype,t),n&&i(e,n),e}}();function i(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}var t=function(){function n(e,t){i(this,n),this.browser=e,this.config=t,this.options=this.browser.options,this.prefetched=new Set,this.eventTime=null,this.threshold=1111,this.numOnHover=0}return e(n,[{key:"init",value:function(){!this.browser.supportsLinkPrefetch()||this.browser.isDataSaverModeOn()||this.browser.isSlowConnection()||(this.regex={excludeUris:RegExp(this.config.excludeUris,"i"),images:RegExp(".("+this.config.imageExt+")$","i"),fileExt:RegExp(".("+this.config.fileExt+")$","i")},this._initListeners(this))}},{key:"_initListeners",value:function(e){-1<this.config.onHoverDelay&&document.addEventListener("mouseover",e.listener.bind(e),e.listenerOptions),document.addEventListener("mousedown",e.listener.bind(e),e.listenerOptions),document.addEventListener("touchstart",e.listener.bind(e),e.listenerOptions)}},{key:"listener",value:function(e){var t=e.target.closest("a"),n=this._prepareUrl(t);if(null!==n)switch(e.type){case"mousedown":case"touchstart":this._addPrefetchLink(n);break;case"mouseover":this._earlyPrefetch(t,n,"mouseout")}}},{key:"_earlyPrefetch",value:function(t,e,n){var i=this,r=setTimeout(function(){if(r=null,0===i.numOnHover)setTimeout(function(){return i.numOnHover=0},1e3);else if(i.numOnHover>i.config.rateThrottle)return;i.numOnHover++,i._addPrefetchLink(e)},this.config.onHoverDelay);t.addEventListener(n,function e(){t.removeEventListener(n,e,{passive:!0}),null!==r&&(clearTimeout(r),r=null)},{passive:!0})}},{key:"_addPrefetchLink",value:function(i){return this.prefetched.add(i.href),new Promise(function(e,t){var n=document.createElement("link");n.rel="prefetch",n.href=i.href,n.onload=e,n.onerror=t,document.head.appendChild(n)}).catch(function(){})}},{key:"_prepareUrl",value:function(e){if(null===e||"object"!==(void 0===e?"undefined":r(e))||!1 in e||-1===["http:","https:"].indexOf(e.protocol))return null;var t=e.href.substring(0,this.config.siteUrl.length),n=this._getPathname(e.href,t),i={original:e.href,protocol:e.protocol,origin:t,pathname:n,href:t+n};return this._isLinkOk(i)?i:null}},{key:"_getPathname",value:function(e,t){var n=t?e.substring(this.config.siteUrl.length):e;return n.startsWith("/")||(n="/"+n),this._shouldAddTrailingSlash(n)?n+"/":n}},{key:"_shouldAddTrailingSlash",value:function(e){return this.config.usesTrailingSlash&&!e.endsWith("/")&&!this.regex.fileExt.test(e)}},{key:"_isLinkOk",value:function(e){return null!==e&&"object"===(void 0===e?"undefined":r(e))&&(!this.prefetched.has(e.href)&&e.origin===this.config.siteUrl&&-1===e.href.indexOf("?")&&-1===e.href.indexOf("#")&&!this.regex.excludeUris.test(e.href)&&!this.regex.images.test(e.href))}}],[{key:"run",value:function(){"undefined"!=typeof RocketPreloadLinksConfig&&new n(new RocketBrowserCompatibilityChecker({capture:!0,passive:!0}),RocketPreloadLinksConfig).init()}}]),n}();t.run();
+}());
+</script>
+<script type="rocketlazyloadscript" data-minify="1" data-rocket-type='text/javascript' src='https://www.pngmart.com/wp-content/cache/min/1/wp-content/themes/pngmart/js/html5.js?ver=1637956534' id='htlml5-js'></script>
+<script>window.lazyLoadOptions={elements_selector:"img[data-lazy-src],.rocket-lazyload,iframe[data-lazy-src]",data_src:"lazy-src",data_srcset:"lazy-srcset",data_sizes:"lazy-sizes",class_loading:"lazyloading",class_loaded:"lazyloaded",threshold:300,callback_loaded:function(element){if(element.tagName==="IFRAME"&&element.dataset.rocketLazyload=="fitvidscompatible"){if(element.classList.contains("lazyloaded")){if(typeof window.jQuery!="undefined"){if(jQuery.fn.fitVids){jQuery(element).parent().fitVids()}}}}}};window.addEventListener('LazyLoad::Initialized',function(e){var lazyLoadInstance=e.detail.instance;if(window.MutationObserver){var observer=new MutationObserver(function(mutations){var image_count=0;var iframe_count=0;var rocketlazy_count=0;mutations.forEach(function(mutation){for(i=0;i<mutation.addedNodes.length;i++){if(typeof mutation.addedNodes[i].getElementsByTagName!=='function'){continue}
+if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
+images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
+if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="https://www.pngmart.com/wp-content/plugins/wp-rocket/assets/js/lazyload/16.1/lazyload.min.js"></script><script type="rocketlazyloadscript">"use strict";var wprRemoveCPCSS=function wprRemoveCPCSS(){var elem;document.querySelector('link[data-rocket-async="style"][rel="preload"]')?setTimeout(wprRemoveCPCSS,200):(elem=document.getElementById("rocket-critical-css"))&&"remove"in elem&&elem.remove()};window.addEventListener?window.addEventListener("load",wprRemoveCPCSS):window.attachEvent&&window.attachEvent("onload",wprRemoveCPCSS);</script><noscript><link rel="stylesheet" href="https://www.pngmart.com/wp-content/cache/min/1/48173b6925ac2a71dd3cc945223c03f4.css" media="all" data-minify="1" /><link rel='stylesheet' id='googlefonts-css-css'  href='https://fonts.googleapis.com/css?family=Droid+Sans&#038;ver=1e96cb0d6776511765e583fc42e2acca&#038;display=swap' type='text/css' media='all' /></noscript></body>
+</html>
+<!-- This website is like a Rocket, isn't it? Performance optimized by WP Rocket. Learn more: https://wp-rocket.me -->
