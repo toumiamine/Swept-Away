@@ -2,4 +2,4 @@
 
 This app is made by Mohamed Amine Toumi, Nouha Jegham, Mayssa Haddar and Khouloud Isamail
 
-![alt text](https://ibb.co/n7v9812)  
+![alt text](https://i.ibb.co/X7g1k5B/1.jpg)  
