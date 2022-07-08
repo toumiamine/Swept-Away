@@ -1,7 +1,5 @@
 # Cleaning app flutter - Swept Away
 
-This app is made by Mohamed Amine Toumi, Nouha Jegham, Mayssa Haddar and Khouloud Isamail
-
 
 ![alt text](https://i.ibb.co/XX2NQPs/5.jpg)  
 
